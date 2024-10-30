@@ -3,7 +3,7 @@
 # Submission Date: 10/30/24
 # Lab 07
 # Lab Section: 15
-# Sources, people worked with, help given to: 
+# Sources, people worked with, help given to: None
 # No further comments
 
 
