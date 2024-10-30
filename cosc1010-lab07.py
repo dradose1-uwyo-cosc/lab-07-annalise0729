@@ -100,6 +100,8 @@ while flag3:
             int2 = int(numbers[1])
             output = int1 + int2
             print(f"{equation} = {output}")
+        else:
+            print("Please enter desired string or 'exit'")
     elif "-" in equation1:
         numbers = equation1.split("-")
         if numbers[0].isnumeric() and numbers[1].isnumeric():
@@ -107,6 +109,8 @@ while flag3:
             int2 = int(numbers[1])
             output = int1 - int2
             print(f"{equation} = {output}")
+        else:
+            print("Please enter desired string or 'exit'")
     elif "/" in equation1:
         numbers = equation1.split("/")
         if numbers[0].isnumeric() and numbers[1].isnumeric():
@@ -114,6 +118,8 @@ while flag3:
             int2 = int(numbers[1])
             output = int1 / int2
             print(f"{equation} = {output}")
+        else:
+            print("Please enter desired string or 'exit'")
     elif "*" in equation1:
         numbers = equation1.split("*")
         if numbers[0].isnumeric() and numbers[1].isnumeric():
@@ -121,6 +127,8 @@ while flag3:
             int2 = int(numbers[1])
             output = int1 * int2
             print(f"{equation} = {output}")
+        else:
+            print("Please enter desired string or 'exit'")
     elif "%" in equation1:
         numbers = equation1.split("%")
         if numbers[0].isnumeric() and numbers[1].isnumeric():
@@ -128,6 +136,8 @@ while flag3:
             int2 = int(numbers[1])
             output = int1 % int2
             print(f"{equation} = {output}")
+        else:
+            print("Please enter desired string or 'exit'")
     elif equation1.lower() == "exit":
         flag3 = False
     else:
