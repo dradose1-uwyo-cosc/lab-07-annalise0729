@@ -1,12 +1,10 @@
-# Your Name Here
+# Annalise Gade
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# Submission Date: 10/30/24
+# Lab 07
+# Lab Section: 15
 # Sources, people worked with, help given to: 
-# your
-# comments
-# here
+# No further comments
 
 
 # Prompt the user for an upper bound 
@@ -18,8 +16,20 @@
 # You will continue to prompt the user until a proper integer value is entered
 
 factorial = 1
+i = 1
+flag = True
 
-print(f"The result of the factorial based on the given bound is {factorial}")
+while flag:
+    upper_bound = input("Please enter the desired upper bound: ")
+    if upper_bound.isnumeric():
+        upper_bound = int(upper_bound)  # convert to integer
+        while i <= upper_bound:
+            factorial = factorial*i
+            i += 1
+        print(f"The result of the factorial based on the given bound is {factorial}")
+        flag = False
+    else:
+        print("Please enter a valid number")
 
 print("*"*75)
 # Create a while loop that prompts a user for input of an integer values
@@ -38,6 +48,25 @@ print("*"*75)
 # The sum should start at 0 
 
 num_sum = 0 
+flag2 = True
+
+while flag2:
+    integer = input("Please enter an integer to add to sum, type 'exit' to break: " )
+    if "-" in integer:
+        integer = integer.removeprefix("-")
+        if integer.isnumeric():
+            integer = int(integer)
+            num_sum = num_sum - integer
+        else:
+            print("Please enter either an integer or type 'exit'")
+    else:
+        if integer.isnumeric():
+            integer = int(integer)
+            num_sum += integer
+        elif integer.lower() == "exit":
+            flag2 = False
+        else:
+            print("Please enter either an integer or type 'exit'")
 
 print(f"Your final sum is {num_sum}")
 
@@ -59,4 +88,47 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
-        
+flag3 = True
+
+while flag3:
+    equation = input("Please enter an equation in the form 'operand operator operand' or enter 'exit': ")
+    equation1 = equation.replace(" ", "")   # removes spaces if entered
+    if "+" in equation1:
+        numbers = equation1.split("+")
+        if numbers[0].isnumeric() and numbers[1].isnumeric():
+            int1 = int(numbers[0])
+            int2 = int(numbers[1])
+            output = int1 + int2
+            print(f"{equation} = {output}")
+    elif "-" in equation1:
+        numbers = equation1.split("-")
+        if numbers[0].isnumeric() and numbers[1].isnumeric():
+            int1 = int(numbers[0])
+            int2 = int(numbers[1])
+            output = int1 - int2
+            print(f"{equation} = {output}")
+    elif "/" in equation1:
+        numbers = equation1.split("/")
+        if numbers[0].isnumeric() and numbers[1].isnumeric():
+            int1 = int(numbers[0])
+            int2 = int(numbers[1])
+            output = int1 / int2
+            print(f"{equation} = {output}")
+    elif "*" in equation1:
+        numbers = equation1.split("*")
+        if numbers[0].isnumeric() and numbers[1].isnumeric():
+            int1 = int(numbers[0])
+            int2 = int(numbers[1])
+            output = int1 * int2
+            print(f"{equation} = {output}")
+    elif "%" in equation1:
+        numbers = equation1.split("%")
+        if numbers[0].isnumeric() and numbers[1].isnumeric():
+            int1 = int(numbers[0])
+            int2 = int(numbers[1])
+            output = int1 % int2
+            print(f"{equation} = {output}")
+    elif equation1.lower() == "exit":
+        flag3 = False
+    else:
+        print("Please enter desired string or 'exit'")
